@@ -38,6 +38,7 @@
     --font-size-20: 20px;
     --border-radius-30: 30px;
     --border-radius-12: 12px;
+    --border-radius-8: 8px;
     --border-radius-50per: 50%;
     --font-weight-400: 400;
     --font-weight-500: 500;
@@ -45,4 +46,14 @@
     --font-weight-700: 700;
     --font-weight-800: 800;
     --font-weight-900: 900;
+}
+body
+{
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--bg-clr);
+}
+a, button
+{
+    cursor: pointer;
 }
