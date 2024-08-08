@@ -24,7 +24,7 @@ const Header = () => {
           <button onClick={handlePanelShow}>შესვლა</button>
         </nav>
       </header>
-      <Panel showPanel={showPanel} onHide={handlePanelHide} />{" "}
+      <Panel showPanel={showPanel} onHide={handlePanelHide} />
     </>
   );
 };

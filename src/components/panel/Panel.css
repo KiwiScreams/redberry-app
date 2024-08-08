@@ -25,6 +25,7 @@
 .auth-panel button.x
 {
     float: right;
+    background-color: transparent;
 }
 .auth-panel button.x:hover
 {
