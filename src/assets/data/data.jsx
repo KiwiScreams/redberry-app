@@ -7,7 +7,7 @@ export const blogs = [
       date: "01 02 2023",
       authorEmail: "email@gmail.com",
       description: "lorem lalalalalalalalal",
-      category: ["market", "aplication", "dog"]
+      category: ["Market", "Aplication", "UI/UX"]
     },
     {
         id: 2,
@@ -16,7 +16,7 @@ export const blogs = [
         date: "01 02 2023",
         authorEmail: "email@gmail.com",
         description: "lorem lalalalalalalalal",
-        category: "market"
+        category: ["Market"]
       },
       {
         id: 3,
@@ -25,7 +25,7 @@ export const blogs = [
         date: "01 02 2023",
         authorEmail: "email@gmail.com",
         description: "lorem lalalalalalalalal",
-        category: ["aplication", "dog"]
+        category: ["Aplication", "Figma"]
       },
       {
         id: 4,
@@ -34,6 +34,24 @@ export const blogs = [
         date: "01 02 2023",
         authorEmail: "email@gmail.com",
         description: "lorem lalalalalalalalal",
-        category: "dog"
-      }
+        category: [""]
+      },
+      {
+        id: 5,
+        title: "Blog Post 5",
+        author: "lil",
+        date: "01 02 2023",
+        authorEmail: "email@gmail.com",
+        description: "lorem lalalalalalalalal",
+        category: ["Market", "Aplication", "Explore"]
+      },
+      {
+          id: 6,
+          title: "Blog Post 6",
+          author: "lulu",
+          date: "01 02 2023",
+          authorEmail: "email@gmail.com",
+          description: "lorem lalalalalalalalal",
+          category: ["Market"]
+        }
   ];

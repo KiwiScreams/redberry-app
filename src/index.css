@@ -22,6 +22,7 @@
     --red-clr: #FA5757;
     --pale-red-clr: #fa575714;
     --green-clr: #60BE16;
+    --pale-green-clr: #5fbe1614;
     --aqua-clr: #08D2AE;
     --pale-aqua-clr: #08d2ad14;
     --blue-clr: #5D37F3;
@@ -56,9 +57,4 @@ body
 a, button
 {
     cursor: pointer;
-}
-.active-filter
-{
-    color: red;
-    outline: 3px solid black;
 }

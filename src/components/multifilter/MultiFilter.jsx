@@ -10,9 +10,13 @@ const MultiFilter = () => {
   const [filteredItems, setFilteredItems] = useState(updatedBlogs);
 
   let filters = [
-    { category: "market", label: "მარკეტი" },
-    { category: "aplication", label: "აპლიკაცია" },
-    { category: "dog", label: "კვლევა" },
+    { category: "Market", label: "მარკეტი" },
+    { category: "Aplication", label: "აპლიკაცია" },
+    { category: "AI", label: "ხელოვნური ინტელექტი" },
+    { category: "UI/UX", label: "UI/UX" },
+    { category: "Explore", label: "კვლევა" },
+    { category: "Figma", label: "Figma" },
+
   ];
 
   const handleFilterButtonClick = (selectedCategory) => {
@@ -42,7 +46,6 @@ const MultiFilter = () => {
   };
   return (
     <>
-      <h1>MultiFilter</h1>
       <div className="buttons-container">
         {filters.map((filter, idx) => (
           <button
