@@ -2,8 +2,13 @@ import { useEffect, useState } from "react";
 import { blogs } from "../../assets/data/data";
 
 const MultiFilter = () => {
+  const updatedBlogs = blogs.map((blog) => ({
+    ...blog,
+    categories: Array.isArray(blog.category) ? blog.category : [blog.category],
+  }));
   const [selectedFilters, setSelectedFilters] = useState([]);
-  const [filteredItems, setFilteredItems] = useState(blogs);
+  const [filteredItems, setFilteredItems] = useState(updatedBlogs);
+
   let filters = ["market", "aplication", "dog"];
 
   const handleFilterButtonClick = (selectedCategory) => {
@@ -21,15 +26,14 @@ const MultiFilter = () => {
 
   const filterItems = () => {
     if (selectedFilters.length > 0) {
-      const filteredItems = selectedFilters.reduce((acc, selectedCategory) => {
-        const filteredBlogs = blogs.filter(
-          (blog) => blog.category === selectedCategory
+      const filteredItems = updatedBlogs.filter((blog) => {
+        return selectedFilters.every((filter) =>
+          blog.categories.includes(filter)
         );
-        return [...acc, ...filteredBlogs];
-      }, []);
+      });
       setFilteredItems(filteredItems);
     } else {
-      setFilteredItems([...blogs]);
+      setFilteredItems(updatedBlogs);
     }
   };
   return (
@@ -49,14 +53,16 @@ const MultiFilter = () => {
         ))}
       </div>
       <div className="items-container">
-        {filteredItems.map((item, idx) => {
-          return (
-            <div key={`items-${idx}`}>
-              <p>{item.title}</p>
-              <p>{item.category}</p>
-            </div>
-          );
-        })}
+        {filteredItems.map((item, idx) => (
+          <div key={`items-${idx}`}>
+            <p>{item.title}</p>
+            <p>
+              {Array.isArray(item.categories)
+                ? item.categories.join(", ")
+                : item.categories}
+            </p>
+          </div>
+        ))}
       </div>
     </>
   );
