@@ -7,7 +7,7 @@ export const blogs = [
       date: "01 02 2023",
       authorEmail: "email@gmail.com",
       description: "lorem lalalalalalalalal",
-      category: "market"
+      category: ["market", "aplication", "dog"]
     },
     {
         id: 2,
@@ -25,6 +25,15 @@ export const blogs = [
         date: "01 02 2023",
         authorEmail: "email@gmail.com",
         description: "lorem lalalalalalalalal",
-        category: "aplication"
+        category: ["aplication", "dog"]
+      },
+      {
+        id: 4,
+        title: "Blog Post 4",
+        author: "lala",
+        date: "01 02 2023",
+        authorEmail: "email@gmail.com",
+        description: "lorem lalalalalalalalal",
+        category: "dog"
       }
   ];
