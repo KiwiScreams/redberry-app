@@ -1,0 +1,58 @@
+.buttons-container button
+{
+    border-radius: var(--border-radius-30);
+    padding: 8px 16px;
+    font-size: var(--font-size-12);
+    font-weight: var(--font-weight-500);
+}
+.buttons-container
+{
+    width: fit-content;
+    display: flex;
+    gap: 40px;
+    margin: auto;
+}
+.buttons-container button:hover
+{
+    scale: 1.2;
+}
+.buttons-container button:nth-child(1)
+{
+    color: var(--yellow-clr);
+    border: 1px solid var(--pale-yellow-clr);
+    background-color: var(--pale-yellow-clr);
+}
+.buttons-container button:nth-child(2)
+{
+    color: var(--sea-green-clr);
+    border: 1px solid var(--pale-sea-green-clr);
+    background-color: var(--pale-sea-green-clr);
+}
+.buttons-container button:nth-child(3)
+{
+    color: var(--purple-clr);
+    border: 1px solid var(--pale-purple-clr);
+    background-color: var(--pale-purple-clr);
+}
+.buttons-container button:nth-child(4)
+{
+    color: var(--red-clr);
+    border: 1px solid var(--pale-red-clr);
+    background-color: var(--pale-red-clr);
+}
+.buttons-container button:nth-child(5)
+{
+    color: var(--green-clr);
+    border: 1px solid var(--pale-green-clr);
+    background-color: var(--pale-green-clr);
+}
+.buttons-container button:nth-child(6)
+{
+    color: var(--aqua-clr);
+    border: 1px solid var(--pale-aqua-clr);
+    background-color: var(--pale-aqua-clr);
+}
+.buttons-container button.active-filter
+{
+    border: 1px solid black;
+}
