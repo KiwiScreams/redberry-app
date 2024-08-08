@@ -1,9 +1,11 @@
 import { useState } from "react";
 import "./Panel.css";
-const Panel = ({ onHide, showPanel }) => {
+const Panel = ({ onHide, showPanel, onFormSubmit = () => {} }) => {
   const [isClosing, setIsClosing] = useState(false);
   const [email, setEmail] = useState("");
   const [error, setError] = useState(null);
+  const [isSubmitted, setIsSubmitted] = useState(false);
+
   const handleClose = () => {
     setIsClosing(true);
     setTimeout(() => {
@@ -31,12 +33,14 @@ const Panel = ({ onHide, showPanel }) => {
     e.preventDefault();
     if (!error) {
       console.log("Form submitted with email:", email);
+      setIsSubmitted(true);
+      onFormSubmit();
     }
   };
 
   return (
     <>
-      {showPanel && (
+      {showPanel && !isSubmitted && (
         <div className="overlay" onAnimationEnd={() => setIsClosing(false)}>
           <section className={`auth-panel ${isClosing ? "closing" : ""}`}>
             <button className="x" onClick={handleClose}>
@@ -55,11 +59,15 @@ const Panel = ({ onHide, showPanel }) => {
             />
             {error && (
               <div className="error-message" style={{ color: "red" }}>
-                <i className="fa-solid fa-circle-exclamation"></i> 
+                <i className="fa-solid fa-circle-exclamation"></i>
                 {error}
               </div>
             )}
-            <button className="submit" onClick={handleSubmit}>
+            <button
+              className="submit"
+              onClick={handleSubmit}
+              disabled={error !== null || email.trim() === ""}
+            >
               შესვლა
             </button>
           </section>
