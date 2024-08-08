@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { blogs } from "../../assets/data/data";
-
+import "./MultiFilter.css";
 const MultiFilter = () => {
   const updatedBlogs = blogs.map((blog) => ({
     ...blog,
@@ -9,7 +9,11 @@ const MultiFilter = () => {
   const [selectedFilters, setSelectedFilters] = useState([]);
   const [filteredItems, setFilteredItems] = useState(updatedBlogs);
 
-  let filters = ["market", "aplication", "dog"];
+  let filters = [
+    { category: "market", label: "მარკეტი" },
+    { category: "aplication", label: "აპლიკაცია" },
+    { category: "dog", label: "კვლევა" },
+  ];
 
   const handleFilterButtonClick = (selectedCategory) => {
     if (selectedFilters.includes(selectedCategory)) {
@@ -40,15 +44,15 @@ const MultiFilter = () => {
     <>
       <h1>MultiFilter</h1>
       <div className="buttons-container">
-        {filters.map((category, idx) => (
+        {filters.map((filter, idx) => (
           <button
-            onClick={() => handleFilterButtonClick(category)}
+            onClick={() => handleFilterButtonClick(filter.category)}
             className={`button ${
-              selectedFilters?.includes(category) ? "active-filter" : ""
+              selectedFilters?.includes(filter.category) ? "active-filter" : ""
             }`}
             key={`filters-${idx}`}
           >
-            {category}
+            {filter.label}
           </button>
         ))}
       </div>
