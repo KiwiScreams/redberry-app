@@ -16,7 +16,6 @@ const MultiFilter = () => {
     { category: "UI/UX", label: "UI/UX" },
     { category: "Explore", label: "კვლევა" },
     { category: "Figma", label: "Figma" },
-
   ];
 
   const handleFilterButtonClick = (selectedCategory) => {
@@ -44,33 +43,55 @@ const MultiFilter = () => {
       setFilteredItems(updatedBlogs);
     }
   };
+  const getCategoryClassName = (category) => {
+    const filter = filters.find((filter) => filter.category === category);
+    return `category-${filters.indexOf(filter) + 1}`;
+  };
   return (
     <>
-      <div className="buttons-container">
-        {filters.map((filter, idx) => (
-          <button
-            onClick={() => handleFilterButtonClick(filter.category)}
-            className={`button ${
-              selectedFilters?.includes(filter.category) ? "active-filter" : ""
-            }`}
-            key={`filters-${idx}`}
-          >
-            {filter.label}
-          </button>
-        ))}
-      </div>
-      <div className="items-container">
-        {filteredItems.map((item, idx) => (
-          <div key={`items-${idx}`}>
-            <p>{item.title}</p>
-            <p>
-              {Array.isArray(item.categories)
-                ? item.categories.join(", ")
-                : item.categories}
-            </p>
-          </div>
-        ))}
-      </div>
+      <section className="filter-body">
+        <section className="buttons-container">
+          {filters.map((filter, idx) => (
+            <button
+              onClick={() => handleFilterButtonClick(filter.category)}
+              className={`button ${
+                selectedFilters?.includes(filter.category)
+                  ? "active-filter"
+                  : ""
+              }`}
+              key={`filters-${idx}`}
+            >
+              {filter.label}
+            </button>
+          ))}
+        </section>
+
+        <section className="blogs-container">
+          {filteredItems.map((item, idx) => (
+            <div key={`blogs-${idx}`} className="blog-card">
+              <div className="blog-image">
+                <img src={item.image} alt="" />
+              </div>
+              <div className="text">
+                <p className="author">{item.author}</p>
+                <span className="date">{item.date}</span>
+                <p className="title">{item.title}</p>
+                <p className="category">
+                  {Array.isArray(item.categories)
+                    ? item.categories.map((category, idx) => (
+                        <span
+                          key={`category-${idx}`}
+                          className={getCategoryClassName(category)}>
+                          {category}
+                        </span>
+                      ))
+                    : item.categories}
+                </p>
+              </div>
+            </div>
+          ))}
+        </section>
+      </section>
     </>
   );
 };
