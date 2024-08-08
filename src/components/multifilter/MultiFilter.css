@@ -149,3 +149,10 @@
     display: flex;
     font-weight: var(--font-weight-500);
 }
+p.no-category
+{
+    text-align: center;
+    font-size: var(--font-size-64);
+    color: var(--dark-clr);
+    margin: auto;
+}
