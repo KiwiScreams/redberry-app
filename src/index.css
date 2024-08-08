@@ -57,3 +57,14 @@ a, button
 {
     cursor: pointer;
 }
+.active-filter
+{
+    background-color: green;
+    color: red;
+}
+.items-container div
+{
+    width: 30%;
+    border: 2px solid red;
+    margin: 30px;
+}
