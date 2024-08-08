@@ -1,0 +1,14 @@
+.layout-section
+{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 64px 76px;
+}
+.layout-section h1
+{
+    font-size: var(--font-size-64);
+    font-weight: var(--font-weight-700);
+    color: var(--dark-clr);
+}
