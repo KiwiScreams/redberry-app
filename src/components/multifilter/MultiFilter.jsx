@@ -69,34 +69,40 @@ const MultiFilter = () => {
         </section>
 
         <section className="blogs-container">
-          {filteredItems.map((item, idx) => (
-            <div key={`blogs-${idx}`} className="blog-card">
-              <div className="blog-image">
-                <img src={item.image} alt="" />
+          {filteredItems.length > 0 ? (
+            filteredItems.map((item, idx) => (
+              <div key={`blogs-${idx}`} className="blog-card">
+                <div className="blog-image">
+                  <img src={item.image} alt="" />
+                </div>
+                <div className="text">
+                  <p className="author">{item.author}</p>
+                  <span className="date">{item.date}</span>
+                  <p className="title">{item.title}</p>
+                  <p className="category">
+                    {Array.isArray(item.categories)
+                      ? item.categories.map((category, idx) => (
+                          <span
+                            key={`category-${idx}`}
+                            className={getCategoryClassName(category)}
+                          >
+                            {category}
+                          </span>
+                        ))
+                      : item.categories}
+                  </p>
+                  <p className="desc-content">
+                    {item.description} <span className="read-more">...</span>
+                  </p>
+                  <Link to={`/blog/${item.id}`}>
+                    სრულად ნახვა <img src={arrowImage} alt="" />
+                  </Link>
+                </div>
               </div>
-              <div className="text">
-                <p className="author">{item.author}</p>
-                <span className="date">{item.date}</span>
-                <p className="title">{item.title}</p>
-                <p className="category">
-                  {Array.isArray(item.categories)
-                    ? item.categories.map((category, idx) => (
-                        <span
-                          key={`category-${idx}`}
-                          className={getCategoryClassName(category)}
-                        >
-                          {category}
-                        </span>
-                      ))
-                    : item.categories}
-                </p>
-                <p className="desc-content">
-                  {item.description} <span className="read-more">...</span>
-                </p>
-                <Link>სრულად ნახვა <img src={arrowImage} alt="" /></Link>
-              </div>
-            </div>
-          ))}
+            ))
+          ) : (
+            <p className="no-category">ასეთი ბლოგი არ არსებობს</p>
+          )}
         </section>
       </section>
     </>
