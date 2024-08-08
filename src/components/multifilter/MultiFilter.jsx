@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { blogs } from "../../assets/data/data";
 import "./MultiFilter.css";
+import arrowImage from "../../assets/images/Arrow.svg";
+import { Link } from "react-router-dom";
 const MultiFilter = () => {
   const updatedBlogs = blogs.map((blog) => ({
     ...blog,
@@ -81,12 +83,17 @@ const MultiFilter = () => {
                     ? item.categories.map((category, idx) => (
                         <span
                           key={`category-${idx}`}
-                          className={getCategoryClassName(category)}>
+                          className={getCategoryClassName(category)}
+                        >
                           {category}
                         </span>
                       ))
                     : item.categories}
                 </p>
+                <p className="desc-content">
+                  {item.description} <span className="read-more">...</span>
+                </p>
+                <Link>სრულად ნახვა <img src={arrowImage} alt="" /></Link>
               </div>
             </div>
           ))}
