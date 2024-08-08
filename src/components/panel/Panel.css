@@ -97,3 +97,17 @@
       top: 30%;
     }
 }
+.auth-panel input.error-input
+{
+    border: 1px solid var(--error-clr);
+    background-color: #FAF2F3;
+}
+.error-message
+{
+    color: var(--error-clr);
+    margin-top: 10px;
+}
+.auth-panel .fa-solid
+{
+    margin-right: 20px;
+}

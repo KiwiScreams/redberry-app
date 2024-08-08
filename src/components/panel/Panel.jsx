@@ -2,6 +2,8 @@ import { useState } from "react";
 import "./Panel.css";
 const Panel = ({ onHide, showPanel }) => {
   const [isClosing, setIsClosing] = useState(false);
+  const [email, setEmail] = useState("");
+  const [error, setError] = useState(null);
   const handleClose = () => {
     setIsClosing(true);
     setTimeout(() => {
@@ -10,13 +12,32 @@ const Panel = ({ onHide, showPanel }) => {
     }, 300);
   };
 
+  const handleEmailChange = (e) => {
+    const emailValue = e.target.value;
+    setEmail(emailValue);
+    validateEmail(emailValue);
+  };
+
+  const validateEmail = (email) => {
+    const emailRegex = /^[a-zA-Z0-9._%+-]+@redberry\.ge$/;
+    if (!emailRegex.test(email)) {
+      setError("მეილი უნდა მთავრდებოდეს @redberry.ge-ით");
+    } else {
+      setError(null);
+    }
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (!error) {
+      console.log("Form submitted with email:", email);
+    }
+  };
+
   return (
     <>
       {showPanel && (
-        <div
-          className="overlay"
-          onAnimationEnd={() => setIsClosing(false)}
-        >
+        <div className="overlay" onAnimationEnd={() => setIsClosing(false)}>
           <section className={`auth-panel ${isClosing ? "closing" : ""}`}>
             <button className="x" onClick={handleClose}>
               <i className="fa-solid fa-x"></i>
@@ -28,8 +49,19 @@ const Panel = ({ onHide, showPanel }) => {
               name="email"
               id="email"
               placeholder="Example@redberry.ge"
+              value={email}
+              onChange={handleEmailChange}
+              className={error ? "error-input" : ""}
             />
-            <button className="submit">შესვლა</button>
+            {error && (
+              <div className="error-message" style={{ color: "red" }}>
+                <i className="fa-solid fa-circle-exclamation"></i> 
+                {error}
+              </div>
+            )}
+            <button className="submit" onClick={handleSubmit}>
+              შესვლა
+            </button>
           </section>
         </div>
       )}
