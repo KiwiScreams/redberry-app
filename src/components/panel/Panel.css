@@ -10,6 +10,7 @@
     border-radius: var(--border-radius-12);
     background-color: var(--white-clr);
     padding: 20px;
+    animation: panelAnim 1s linear;
 }
 .overlay
 {
@@ -65,4 +66,34 @@
     width: 100%;
     padding-left: 16px;
     height: 44px;
+}
+@keyframes panelAnim
+{
+    0%
+    {
+        top: 30%;
+        opacity: 0;
+    }
+    100%
+    {
+        top: 50%;
+        opacity: 1;
+    }
+}
+.auth-panel.closing
+{
+    animation: fadeOut 1s ease-in-out;
+}
+@keyframes fadeOut
+{
+    from
+    {
+      opacity: 1;
+      top: 50%;
+    }
+    to
+    {
+      opacity: 0;
+      top: 30%;
+    }
 }
