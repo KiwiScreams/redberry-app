@@ -1,0 +1,48 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style-type: none;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    transition: 0.3s;
+}
+:root
+{
+    --black-clr: #000;
+    --white-clr: #fff;
+    --yellow-clr: #D6961C;
+    --pale-yellow-clr: #ffb92e14;
+    --sea-green-clr: #15C972;
+    --pale-sea-green-clr: #1cd47b14;
+    --purple-clr: #B71FDD;
+    --pale-purple-clr: #b51fdb14;
+    --red-clr: #FA5757;
+    --pale-red-clr: #fa575714;
+    --green-clr: #60BE16;
+    --aqua-clr: #08D2AE;
+    --pale-aqua-clr: #08d2ad14;
+    --blue-clr: #5D37F3;
+    --bg-clr: #F3F2FA;
+    --dark-clr: #1A1A1F;
+    --gray-clr: #85858D;
+    --dark-gray-clr: #404049;
+    --error-clr: #EA1919;
+    --success-clr: #14D81C;
+    --font-size-64: 64px;
+    --font-size-12: 12px;
+    --font-size-14: 14px;
+    --font-size-16: 16px;
+    --font-size-20: 20px;
+    --border-radius-30: 30px;
+    --border-radius-12: 12px;
+    --border-radius-50per: 50%;
+    --font-weight-400: 400;
+    --font-weight-500: 500;
+    --font-weight-600: 600;
+    --font-weight-700: 700;
+    --font-weight-800: 800;
+    --font-weight-900: 900;
+}
