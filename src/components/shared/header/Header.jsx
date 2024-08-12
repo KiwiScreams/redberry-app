@@ -1,14 +1,13 @@
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import redberryLogo from "../../../assets/images/redberry.svg";
 import "./Header.css";
 import { useState } from "react";
 import Panel from "../../panel/Panel";
-import { useEffect } from "react";
-import { useCallback } from "react";
 const Header = ({ handleSubmit }) => {
   const [showPanel, setShowPanel] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const navigate = useNavigate();
+  const location = useLocation();
 
   const handlePanelShow = () => {
     setShowPanel(true);
@@ -31,21 +30,29 @@ const Header = ({ handleSubmit }) => {
     <>
       <header>
         <nav>
-          <NavLink to="/">
+          <NavLink
+            to="/"
+            style={
+              location.pathname === "/add-blog"
+                ? { margin: "auto", display: "block" }
+                : {}
+            }
+          >
             <img src={redberryLogo} alt="" />
           </NavLink>
-          {isSubmitted ? (
-            <button onClick={addBlogPageNavigate}>დაამატე ბლოგი</button>
-          ) : (
-            <button
-              onClick={() => {
-                handlePanelShow();
-                handleSubmit();
-              }}
-            >
-              შესვლა
-            </button>
-          )}
+          {location.pathname !== "/add-blog" &&
+            (isSubmitted ? (
+              <button onClick={addBlogPageNavigate}>დაამატე ბლოგი</button>
+            ) : showPanel ? null : (
+              <button
+                onClick={() => {
+                  handlePanelShow();
+                  handleSubmit();
+                }}
+              >
+                შესვლა
+              </button>
+            ))}
         </nav>
       </header>
       <Panel
