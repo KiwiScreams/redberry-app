@@ -51,25 +51,28 @@ const Panel = ({
             <button className="x" onClick={handleClose}>
               <i className="fa-solid fa-x"></i>
             </button>
-            <h3>შესვლა</h3>
+
             {!loginSuccess && (
               <>
-                <label htmlFor="email">ელ-ფოსტა</label>
-                <input
-                  type="email"
-                  name="email"
-                  id="email"
-                  placeholder="Example@redberry.ge"
-                  value={email}
-                  onChange={handleEmailChange}
-                  className={error ? "error-input" : ""}
-                />
-                {error && (
-                  <div className="error-message" style={{ color: "red" }}>
-                    <i className="fa-solid fa-circle-exclamation"></i>
-                    {error}
-                  </div>
-                )}
+                <h3>შესვლა</h3>
+                <div className="input-container">
+                  <label htmlFor="email">ელ-ფოსტა</label>
+                  <input
+                    type="email"
+                    name="email"
+                    id="email"
+                    placeholder="Example@redberry.ge"
+                    value={email}
+                    onChange={handleEmailChange}
+                    className={error ? "error-input" : ""}
+                  />
+                  {error && (
+                    <div className="error-message" style={{ color: "red" }}>
+                      <i className="fa-solid fa-circle-exclamation"></i>
+                      {error}
+                    </div>
+                  )}
+                </div>
               </>
             )}
             {loginSuccess ? (
@@ -78,7 +81,7 @@ const Panel = ({
                   <i className="fa-solid fa-check"></i>
                 </div>
                 <h4>წარმატებული ავტორიზაცია</h4>
-                
+
                 <button className="submit" onClick={handleOK}>
                   დასრულება
                 </button>

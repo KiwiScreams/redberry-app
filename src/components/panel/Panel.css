@@ -7,9 +7,9 @@
     transform: translate(-50%, -50%);
     width: 480px;
     height: 300px;
+    padding: 40px 24px;
     border-radius: var(--border-radius-12);
     background-color: var(--white-clr);
-    padding: 20px;
     animation: panelAnim 1s linear;
 }
 .overlay
@@ -47,9 +47,9 @@
     color: var(--white-clr);
     font-size: var(--font-size-14);
     font-weight: var(--font-weight-500);
-    margin-top: 24px;
     background-color: var(--blue-clr);
     border-radius: var(--border-radius-8);
+    margin-top: 48px;
 }
 .auth-panel button.submit:hover
 {
@@ -111,6 +111,12 @@
 {
     color: var(--error-clr);
     margin-top: 10px;
+    position: absolute;
+    bottom: -28px;
+}
+.input-container
+{
+    position: relative;
 }
 .auth-panel .fa-solid
 {
@@ -122,11 +128,12 @@
 }
 .auth-panel .success-message .success-icon
 {
-    width: 54px;
-    height: 54px;
+    width: 64px;
+    height: 64px;
     border-radius: 50%;
     background-color: #14D81C;
     margin: auto;
+    margin-top: 24px;
     position: relative;
     margin-bottom: 20px;
 }
@@ -141,5 +148,5 @@
 }
 .auth-panel .success-message h4
 {
-    margin-bottom: 24px;
+    margin-bottom: 4px;
 }
