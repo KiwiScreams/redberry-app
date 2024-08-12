@@ -5,9 +5,14 @@ import AddBlog from "./pages/add blog/AddBlog";
 import BlogDetail from "./pages/detail/BlogDetail";
 
 function App() {
+  const handleSubmit = () =>
+  {
+    console.log("hi");
+    
+  }
   return (
     <>
-      <Header />
+      <Header handleSubmit={handleSubmit}/>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/blog/:id" element={<BlogDetail />} />
