@@ -1,14 +1,15 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import redberryLogo from "../../../assets/images/redberry.svg";
 import "./Header.css";
 import { useState } from "react";
 import Panel from "../../panel/Panel";
 import { useEffect } from "react";
 import { useCallback } from "react";
-const Header = ({handleSubmit}) => {
+const Header = ({ handleSubmit }) => {
   const [showPanel, setShowPanel] = useState(false);
-  const [isSubmited, setIsSubmitted] = useState(false);
-  const [buttonText, setButtonText] = useState("შესვლა");
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const navigate = useNavigate();
+
   const handlePanelShow = () => {
     setShowPanel(true);
   };
@@ -16,10 +17,16 @@ const Header = ({handleSubmit}) => {
   const handlePanelHide = () => {
     setShowPanel(false);
   };
+
   const handlePanelSubmit = () => {
-    setButtonText("დაამატე ბლოგი");
+    setIsSubmitted(true);
   };
 
+  const addBlogPageNavigate = () => {
+    if (isSubmitted) {
+      navigate("/add-blog");
+    }
+  };
   return (
     <>
       <header>
@@ -27,17 +34,25 @@ const Header = ({handleSubmit}) => {
           <NavLink to="/">
             <img src={redberryLogo} alt="" />
           </NavLink>
-          <button
-            onClick={() => {
-              handlePanelShow();
-              handleSubmit();
-            }}
-          >
-            {buttonText}
-          </button>
+          {isSubmitted ? (
+            <button onClick={addBlogPageNavigate}>დაამატე ბლოგი</button>
+          ) : (
+            <button
+              onClick={() => {
+                handlePanelShow();
+                handleSubmit();
+              }}
+            >
+              შესვლა
+            </button>
+          )}
         </nav>
       </header>
-      <Panel showPanel={showPanel} onHide={handlePanelHide} onPanelSubmit={handlePanelSubmit}/>
+      <Panel
+        showPanel={showPanel}
+        onHide={handlePanelHide}
+        onPanelSubmit={handlePanelSubmit}
+      />
     </>
   );
 };
