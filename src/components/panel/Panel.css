@@ -6,7 +6,7 @@
     left: 50%;
     transform: translate(-50%, -50%);
     width: 480px;
-    height: 272px;
+    height: 300px;
     border-radius: var(--border-radius-12);
     background-color: var(--white-clr);
     padding: 20px;
