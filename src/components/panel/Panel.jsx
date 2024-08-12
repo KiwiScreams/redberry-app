@@ -1,11 +1,15 @@
 import { useState } from "react";
 import "./Panel.css";
-const Panel = ({ onHide, showPanel, onFormSubmit = () => {} }) => {
+const Panel = ({
+  onHide,
+  showPanel,
+  onFormSubmit = () => {},
+  onPanelSubmit,
+}) => {
   const [isClosing, setIsClosing] = useState(false);
   const [email, setEmail] = useState("");
   const [error, setError] = useState(null);
   const [isSubmitted, setIsSubmitted] = useState(false);
-
   const handleClose = () => {
     setIsClosing(true);
     setTimeout(() => {
@@ -35,6 +39,7 @@ const Panel = ({ onHide, showPanel, onFormSubmit = () => {} }) => {
       console.log("Form submitted with email:", email);
       setIsSubmitted(true);
       onFormSubmit();
+      onPanelSubmit();
     }
   };
 

@@ -18,8 +18,9 @@ header nav button
     border-radius: var(--border-radius-8);
     font-weight: var(--font-weight-500);
     color: var(--white-clr);
-    width: 93px;
     height: 40px;
+    width: fit-content;
+    padding: 10px 20px;
 }
 header nav button:hover
 {
