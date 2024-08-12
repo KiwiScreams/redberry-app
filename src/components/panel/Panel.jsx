@@ -10,12 +10,14 @@ const Panel = ({
   const [email, setEmail] = useState("");
   const [error, setError] = useState(null);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [loginSuccess, setLoginSuccess] = useState(false);
   const handleClose = () => {
     setIsClosing(true);
+    setLoginSuccess(true);
     setTimeout(() => {
       onHide();
       setIsClosing(false);
-    }, 300);
+    }, 3000);
   };
 
   const handleEmailChange = (e) => {
@@ -37,9 +39,10 @@ const Panel = ({
     e.preventDefault();
     if (!error) {
       console.log("Form submitted with email:", email);
-      setIsSubmitted(true);
+      // setIsSubmitted(true);
       onFormSubmit();
-      onPanelSubmit();
+      // onPanelSubmit();
+      setLoginSuccess(true);
     }
   };
 
@@ -68,13 +71,23 @@ const Panel = ({
                 {error}
               </div>
             )}
-            <button
-              className="submit"
-              onClick={handleSubmit}
-              disabled={error !== null || email.trim() === ""}
-            >
-              შესვლა
-            </button>
+            {loginSuccess ? (
+              <div className="success-message" style={{ color: "green" }}>
+                <i className="fa-solid fa-check-circle"></i>
+                შესვლა წარმატებულია!
+                <button className="ok" onClick={handleClose}>
+                  დასრულება
+                </button>
+              </div>
+            ) : (
+              <button
+                className="submit"
+                onClick={handleSubmit}
+                disabled={error !== null || email.trim() === ""}
+              >
+                შესვლა
+              </button>
+            )}
           </section>
         </div>
       )}
