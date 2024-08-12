@@ -13,11 +13,8 @@ const Panel = ({
   const [loginSuccess, setLoginSuccess] = useState(false);
   const handleClose = () => {
     setIsClosing(true);
-    setLoginSuccess(true);
-    setTimeout(() => {
-      onHide();
-      setIsClosing(false);
-    }, 3000);
+    onHide();
+    setIsClosing(false);
   };
 
   const handleEmailChange = (e) => {
@@ -38,14 +35,14 @@ const Panel = ({
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!error) {
-      console.log("Form submitted with email:", email);
-      // setIsSubmitted(true);
       onFormSubmit();
-      // onPanelSubmit();
       setLoginSuccess(true);
     }
   };
-
+  const handleOK = () => {
+    setIsSubmitted(true);
+    onPanelSubmit();
+  };
   return (
     <>
       {showPanel && !isSubmitted && (
@@ -55,27 +52,34 @@ const Panel = ({
               <i className="fa-solid fa-x"></i>
             </button>
             <h3>შესვლა</h3>
-            <label htmlFor="email">ელ-ფოსტა</label>
-            <input
-              type="email"
-              name="email"
-              id="email"
-              placeholder="Example@redberry.ge"
-              value={email}
-              onChange={handleEmailChange}
-              className={error ? "error-input" : ""}
-            />
-            {error && (
-              <div className="error-message" style={{ color: "red" }}>
-                <i className="fa-solid fa-circle-exclamation"></i>
-                {error}
-              </div>
+            {!loginSuccess && (
+              <>
+                <label htmlFor="email">ელ-ფოსტა</label>
+                <input
+                  type="email"
+                  name="email"
+                  id="email"
+                  placeholder="Example@redberry.ge"
+                  value={email}
+                  onChange={handleEmailChange}
+                  className={error ? "error-input" : ""}
+                />
+                {error && (
+                  <div className="error-message" style={{ color: "red" }}>
+                    <i className="fa-solid fa-circle-exclamation"></i>
+                    {error}
+                  </div>
+                )}
+              </>
             )}
             {loginSuccess ? (
-              <div className="success-message" style={{ color: "green" }}>
-                <i className="fa-solid fa-check-circle"></i>
-                შესვლა წარმატებულია!
-                <button className="ok" onClick={handleClose}>
+              <div className="success-message">
+                <div className="success-icon">
+                  <i className="fa-solid fa-check"></i>
+                </div>
+                <h4>წარმატებული ავტორიზაცია</h4>
+                
+                <button className="submit" onClick={handleOK}>
                   დასრულება
                 </button>
               </div>

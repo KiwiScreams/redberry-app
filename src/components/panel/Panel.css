@@ -51,6 +51,10 @@
     background-color: var(--blue-clr);
     border-radius: var(--border-radius-8);
 }
+.auth-panel button.submit:hover
+{
+    opacity: 0.8;
+}
 .auth-panel label
 {
     display: block;
@@ -111,4 +115,31 @@
 .auth-panel .fa-solid
 {
     margin-right: 20px;
+}
+.auth-panel .success-message
+{
+    text-align: center;
+}
+.auth-panel .success-message .success-icon
+{
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
+    background-color: #14D81C;
+    margin: auto;
+    position: relative;
+    margin-bottom: 20px;
+}
+.auth-panel .success-message i
+{
+    color: var(--white-clr);
+    font-size: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.auth-panel .success-message h4
+{
+    margin-bottom: 24px;
 }
