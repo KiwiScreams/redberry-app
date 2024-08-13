@@ -64,7 +64,7 @@ const AddBlog = () => {
   return (
     <>
       <section className="add-blog-section">
-        <button onClick={previewPage}>
+        <button onClick={previewPage} className="preview">
           <i className="fa-solid fa-chevron-left"></i>
         </button>
         <form>
@@ -102,7 +102,7 @@ const AddBlog = () => {
             </div>
           </div>
           <div className="form-container">
-            <div className="top-input-container">
+            <div className="flex-input-container">
               <div className="input-container">
                 <label htmlFor="author">ავტორი*</label>
                 <input
@@ -137,31 +137,37 @@ const AddBlog = () => {
                 <li>მინიმუმ ორი სიმბოლო</li>
               </UlComponent>
             </div>
-            <div className="input-container">
-              <label htmlFor="title">გამოქვეყნების თარიღი*</label>
-              <input
-                type="text"
-                name="title"
-                id="title"
-                placeholder="შეიყვანეთ აღწერა"
-              />
+            <div className="flex-input-container">
+              <div className="input-container">
+                <label htmlFor="title">გამოქვეყნების თარიღი*</label>
+                <input
+                  type="text"
+                  name="title"
+                  id="title"
+                  placeholder="შეიყვანეთ აღწერა"
+                />
+              </div>
+
+              <div className="input-container">
+                <label htmlFor="category">გამოქვეყნების თარიღი*</label>
+                <select name="category" id="" placeholder="აირჩიეთ კატეგორია">
+                  <option value="market">მარკეტი</option>
+                  <option value="application">აპლიკაცია</option>
+                  <option value="AI">ხელოვნური ინტელექტი</option>
+                </select>
+              </div>
             </div>
-            <div className="input-container">
-              <label htmlFor="category">გამოქვეყნების თარიღი*</label>
-              <select name="category" id="" placeholder="აირჩიეთ კატეგორია">
-                <option value="market">მარკეტი</option>
-                <option value="application">აპლიკაცია</option>
-                <option value="AI">ხელოვნური ინტელექტი</option>
-              </select>
-            </div>
-            <div className="input-container">
-              <label htmlFor="email">ელ-ფოსტა</label>
-              <input
-                type="email"
-                name="email"
-                id="email"
-                placeholder="Example@redberry.ge"
-              />
+            <div className="flex-input-container">
+              <div className="input-container">
+                <label htmlFor="email">ელ-ფოსტა</label>
+                <input
+                  type="email"
+                  name="email"
+                  id="email"
+                  placeholder="Example@redberry.ge"
+                />
+              </div>
+              <button disabled>გამოქვეყნება</button>
             </div>
           </div>
         </form>
