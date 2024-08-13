@@ -101,31 +101,33 @@ const AddBlog = () => {
             </div>
           </div>
           <div className="form-container">
-            <div className="input-container">
-              <label htmlFor="author">ავტორი*</label>
-              <input
-                type="text"
-                name="author"
-                id="author"
-                placeholder="შეიყვანეთ ავტორი"
-              />
-              <ul>
-                <li>მინიმუმ 4 სიმბოლო</li>
-                <li>მინიმუმ ორი სიტყვა</li>
-                <li>მხოლოდ ქართული სიმბოლოები</li>
-              </ul>
-            </div>
-            <div className="input-container">
-              <label htmlFor="title">სათაური*</label>
-              <input
-                type="text"
-                name="title"
-                id="title"
-                placeholder="შეიყვანეთ სათაური"
-              />
-              <ul>
-                <li>მინიმუმ 2 სიმბოლო</li>
-              </ul>
+            <div className="top-input-container">
+              <div className="input-container">
+                <label htmlFor="author">ავტორი*</label>
+                <input
+                  type="text"
+                  name="author"
+                  id="author"
+                  placeholder="შეიყვანეთ ავტორი"
+                />
+                <ul>
+                  <li>მინიმუმ 4 სიმბოლო</li>
+                  <li>მინიმუმ ორი სიტყვა</li>
+                  <li>მხოლოდ ქართული სიმბოლოები</li>
+                </ul>
+              </div>
+              <div className="input-container">
+                <label htmlFor="title">სათაური*</label>
+                <input
+                  type="text"
+                  name="title"
+                  id="title"
+                  placeholder="შეიყვანეთ სათაური"
+                />
+                <ul>
+                  <li>მინიმუმ 2 სიმბოლო</li>
+                </ul>
+              </div>
             </div>
             <div className="input-container">
               <label>აღწერა*</label>
