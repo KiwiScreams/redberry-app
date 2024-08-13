@@ -17,12 +17,9 @@ function App() {
         document.body.style.background = "#F3F2FA";
     }
   }, [location.pathname]);
-  const handleSubmit = () => {
-    console.log("hi");
-  };
   return (
     <>
-      <Header handleSubmit={handleSubmit} />
+      <Header />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/blog/:id" element={<BlogDetail />} />
