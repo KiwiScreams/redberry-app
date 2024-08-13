@@ -5,11 +5,24 @@ import "./AddBlog.css";
 const AddBlog = () => {
   const navigate = useNavigate();
   const [selectedImage, setSelectedImage] = useState(null);
+  const [dragging, setDragging] = useState(false);
   const previewPage = () => {
     navigate("/");
   };
   const handleImageChange = (event) => {
     const file = event.target.files[0];
+    setSelectedImage(file);
+  };
+
+  const handleDragOver = (event) => {
+    event.preventDefault();
+    setDragging(true);
+  };
+
+  const handleDrop = (event) => {
+    event.preventDefault();
+    setDragging(false);
+    const file = event.dataTransfer.files[0];
     setSelectedImage(file);
   };
   return (
@@ -20,7 +33,11 @@ const AddBlog = () => {
         </button>
         <div className="add-blog-container">
           <h1>ბლოგის დამატება</h1>
-          <div className="image-upload-container">
+          <div
+            className="image-upload-container"
+            onDragOver={handleDragOver}
+            onDrop={handleDrop}
+          >
             <label>ატვირთეთ ფოტო</label>
             <label
               className="image-upload-area"

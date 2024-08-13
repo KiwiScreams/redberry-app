@@ -48,6 +48,7 @@
     background-color: #F4F3FF;
     margin-top: 8px;
     margin-bottom: 24px;
+    position: relative;
     overflow: hidden;
     border-radius: var(--border-radius-12);
     cursor: pointer;
