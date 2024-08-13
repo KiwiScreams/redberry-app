@@ -100,6 +100,67 @@ const AddBlog = () => {
               </label>
             </div>
           </div>
+          <div className="form-container">
+            <div className="input-container">
+              <label htmlFor="author">ავტორი*</label>
+              <input
+                type="text"
+                name="author"
+                id="author"
+                placeholder="შეიყვანეთ ავტორი"
+              />
+              <ul>
+                <li>მინიმუმ 4 სიმბოლო</li>
+                <li>მინიმუმ ორი სიტყვა</li>
+                <li>მხოლოდ ქართული სიმბოლოები</li>
+              </ul>
+            </div>
+            <div className="input-container">
+              <label htmlFor="title">სათაური*</label>
+              <input
+                type="text"
+                name="title"
+                id="title"
+                placeholder="შეიყვანეთ სათაური"
+              />
+              <ul>
+                <li>მინიმუმ 2 სიმბოლო</li>
+              </ul>
+            </div>
+            <div className="input-container">
+              <label>აღწერა*</label>
+              <textarea placeholder="შეიყვანეთ აღწერა"></textarea>
+              <ul>
+                <li>მინიმუმ ორი სიმბოლო</li>
+              </ul>
+            </div>
+            <div className="input-container">
+              <label htmlFor="title">გამოქვეყნების თარიღი*</label>
+              <input
+                type="text"
+                name="title"
+                id="title"
+                placeholder="შეიყვანეთ აღწერა"
+              />
+            </div>
+            <div className="input-container">
+              <label htmlFor="category">გამოქვეყნების თარიღი*</label>
+              <select name="category" id="" placeholder="აირჩიეთ კატეგორია">
+                <option value="market">მარკეტი</option>
+                <option value="application">აპლიკაცია</option>
+                <option value="AI">ხელოვნური ინტელექტი</option>
+              </select>
+            </div>
+            <div className="input-container">
+              <label htmlFor="email">ელ-ფოსტა</label>
+              <input
+                type="email"
+                name="email"
+                id="email"
+                placeholder="Example@redberry.ge"
+              />
+            </div>
+          </div>
         </form>
       </section>
     </>
