@@ -5,27 +5,26 @@
     margin-top: 40px;
     display: flex;
     gap: 240px;
-    /* background-color: aqua; */
+    padding-bottom: 110px;
 }
-.add-blog-section button
+.add-blog-section button.preview
 {
     background-color: #E4E3EB;
     border-radius: 50%;
     width: 44px;
     height: 44px;
 }
-.add-blog-section button i
+.add-blog-section button.preview i
 {
     color: var(--dark-clr);
 }
-.add-blog-section button:hover
+.add-blog-section button.preview:hover
 {
     opacity: 0.8;
     transform: scale(1.2);
 }
 .add-blog-container
 {
-    background-color: rgb(178, 162, 255);
     width: 600px;
 }
 .add-blog-container h1
@@ -72,11 +71,10 @@
 .form-container
 {
     width: 100%;
-    /* background-color: red; */
 }
 .input-container
 {
-    /* background-color: pink; */
+    margin-bottom: 24px;
 }
 .input-container label
 {
@@ -86,7 +84,7 @@
     margin-bottom: 8px;
     font-weight: var(--font-weight-600);
 }
-.top-input-container
+.flex-input-container
 {
     display: flex;
     justify-content: space-between;
@@ -124,5 +122,27 @@
 .input-container ul
 {
     margin-top: 8px;
-    margin-bottom: 24px;
+}
+.flex-input-container button
+{
+    margin-top: 100px;
+    width: 288px;
+    height: 40px;
+    border-radius: var(--border-radius-8);
+    background-color: var(--blue-clr);
+    color: var(--white-clr);
+    font-size: var(--font-size-14);
+    font-weight: var(--font-weight-500);
+}
+.flex-input-container button:hover
+{
+    opacity: 0.8;
+}
+.flex-input-container button:disabled
+{
+    background-color: #E4E3EB;
+}
+.flex-input-container button:disabled:hover
+{
+    opacity: 1;
 }
