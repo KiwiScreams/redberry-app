@@ -31,41 +31,44 @@ const AddBlog = () => {
         <button onClick={previewPage}>
           <i className="fa-solid fa-chevron-left"></i>
         </button>
-        <div className="add-blog-container">
-          <h1>ბლოგის დამატება</h1>
-          <div
-            className="image-upload-container"
-            onDragOver={handleDragOver}
-            onDrop={handleDrop}
-          >
-            <label>ატვირთეთ ფოტო</label>
-            <label
-              className="image-upload-area"
-              style={{
-                backgroundImage: selectedImage
-                  ? `url(${URL.createObjectURL(selectedImage)})`
-                  : "none",
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-              }}
+        <form>
+          <div className="add-blog-container">
+            <h1>ბლოგის დამატება</h1>
+            <div
+              className="image-upload-container"
+              onDragOver={handleDragOver}
+              onDrop={handleDrop}
             >
-              <input
-                className="upload-box-content"
-                type="file"
-                hidden
-                onChange={handleImageChange}
-              />
-              {!selectedImage ? (
-                <div className="img-view">
-                  <img src={folderAddImage} alt="" />
-                  <p>
-                    ჩააგდეთ ფაილი აქ ან <span>აირჩიეთ ფაილი</span>
-                  </p>
-                </div>
-              ) : null}
-            </label>
+              <label>ატვირთეთ ფოტო</label>
+              <label
+                className="image-upload-area"
+                style={{
+                  backgroundImage: selectedImage
+                    ? `url(${URL.createObjectURL(selectedImage)})`
+                    : "none",
+                  backgroundSize: "cover",
+                  backgroundPosition: "center",
+                }}
+              >
+                <input
+                  className="upload-box-content"
+                  type="file"
+                  hidden
+                  onChange={handleImageChange}
+                />
+                {!selectedImage ? (
+                  <div className="img-view">
+                    <img src={folderAddImage} alt="" />
+                    <p>
+                      ჩააგდეთ ფაილი აქ ან <span>აირჩიეთ ფაილი</span>
+                    </p>
+                  </div>
+                ) : null}
+              </label>
+            </div>
           </div>
-        </div>
+          
+        </form>
       </section>
     </>
   );
