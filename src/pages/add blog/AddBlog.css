@@ -121,3 +121,8 @@
     padding-top: 12px;
     resize: none;
 }
+.input-container ul
+{
+    margin-top: 8px;
+    margin-bottom: 24px;
+}
