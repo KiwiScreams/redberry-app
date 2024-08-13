@@ -1,14 +1,19 @@
 import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import redberryLogo from "../../../assets/images/redberry.svg";
 import "./Header.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Panel from "../../panel/Panel";
-const Header = ({ handleSubmit }) => {
+const Header = () => {
   const [showPanel, setShowPanel] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
-
+  useEffect(() => {
+    const isLoggedIn = localStorage.getItem("isLoggedIn");
+    if (isLoggedIn) {
+      setIsSubmitted(true);
+    }
+  }, []);
   const handlePanelShow = () => {
     setShowPanel(true);
   };
@@ -19,6 +24,7 @@ const Header = ({ handleSubmit }) => {
 
   const handlePanelSubmit = () => {
     setIsSubmitted(true);
+    localStorage.setItem("isLoggedIn", true);
   };
 
   const addBlogPageNavigate = () => {
@@ -26,6 +32,7 @@ const Header = ({ handleSubmit }) => {
       navigate("/add-blog");
     }
   };
+
   return (
     <>
       <header>
@@ -47,7 +54,6 @@ const Header = ({ handleSubmit }) => {
               <button
                 onClick={() => {
                   handlePanelShow();
-                  handleSubmit();
                 }}
               >
                 შესვლა

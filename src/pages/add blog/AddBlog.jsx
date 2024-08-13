@@ -6,9 +6,9 @@ const AddBlog = () => {
   const navigate = useNavigate();
   const [selectedImage, setSelectedImage] = useState(null);
   const [dragging, setDragging] = useState(false);
-
   const [imageData, setImageData] = useState(null);
   const [imageUploaded, setImageUploaded] = useState(false);
+
   const previewPage = () => {
     navigate("/");
   };
@@ -53,11 +53,13 @@ const AddBlog = () => {
       setSelectedImage(null);
     }
   }, []);
+
   useEffect(() => {
     if (imageData) {
       setImageUploaded(true);
     }
   }, [imageData]);
+
   return (
     <>
       <section className="add-blog-section">
