@@ -1,5 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
+import styled from "styled-components";
+import { UlComponent } from "../../assets/style/Ul";
 import folderAddImage from "../../assets/images/folder-add.svg";
 import "./AddBlog.css";
 const AddBlog = () => {
@@ -8,7 +10,6 @@ const AddBlog = () => {
   const [dragging, setDragging] = useState(false);
   const [imageData, setImageData] = useState(null);
   const [imageUploaded, setImageUploaded] = useState(false);
-
   const previewPage = () => {
     navigate("/");
   };
@@ -110,11 +111,11 @@ const AddBlog = () => {
                   id="author"
                   placeholder="შეიყვანეთ ავტორი"
                 />
-                <ul>
+                <UlComponent>
                   <li>მინიმუმ 4 სიმბოლო</li>
                   <li>მინიმუმ ორი სიტყვა</li>
                   <li>მხოლოდ ქართული სიმბოლოები</li>
-                </ul>
+                </UlComponent>
               </div>
               <div className="input-container">
                 <label htmlFor="title">სათაური*</label>
@@ -124,17 +125,17 @@ const AddBlog = () => {
                   id="title"
                   placeholder="შეიყვანეთ სათაური"
                 />
-                <ul>
+                <UlComponent>
                   <li>მინიმუმ 2 სიმბოლო</li>
-                </ul>
+                </UlComponent>
               </div>
             </div>
             <div className="input-container">
               <label>აღწერა*</label>
               <textarea placeholder="შეიყვანეთ აღწერა"></textarea>
-              <ul>
+              <UlComponent>
                 <li>მინიმუმ ორი სიმბოლო</li>
-              </ul>
+              </UlComponent>
             </div>
             <div className="input-container">
               <label htmlFor="title">გამოქვეყნების თარიღი*</label>
