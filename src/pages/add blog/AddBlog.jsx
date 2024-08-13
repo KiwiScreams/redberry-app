@@ -1,17 +1,29 @@
 import { useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import folderAddImage from "../../assets/images/folder-add.svg";
 import "./AddBlog.css";
 const AddBlog = () => {
   const navigate = useNavigate();
   const [selectedImage, setSelectedImage] = useState(null);
   const [dragging, setDragging] = useState(false);
+
+  const [imageData, setImageData] = useState(null);
+  const [imageUploaded, setImageUploaded] = useState(false);
   const previewPage = () => {
     navigate("/");
   };
+
   const handleImageChange = (event) => {
     const file = event.target.files[0];
     setSelectedImage(file);
+
+    const reader = new FileReader();
+    reader.onload = () => {
+      const imageDataUrl = reader.result;
+      localStorage.setItem("imageData", imageDataUrl);
+      setImageData(imageDataUrl);
+    };
+    reader.readAsDataURL(file);
   };
 
   const handleDragOver = (event) => {
@@ -24,7 +36,28 @@ const AddBlog = () => {
     setDragging(false);
     const file = event.dataTransfer.files[0];
     setSelectedImage(file);
+
+    const reader = new FileReader();
+    reader.onload = () => {
+      const imageDataUrl = reader.result;
+      localStorage.setItem("imageData", imageDataUrl);
+      setImageData(imageDataUrl);
+    };
+    reader.readAsDataURL(file);
   };
+
+  useEffect(() => {
+    const storedImageData = localStorage.getItem("imageData");
+    if (storedImageData) {
+      setImageData(storedImageData);
+      setSelectedImage(null);
+    }
+  }, []);
+  useEffect(() => {
+    if (imageData) {
+      setImageUploaded(true);
+    }
+  }, [imageData]);
   return (
     <>
       <section className="add-blog-section">
@@ -43,9 +76,7 @@ const AddBlog = () => {
               <label
                 className="image-upload-area"
                 style={{
-                  backgroundImage: selectedImage
-                    ? `url(${URL.createObjectURL(selectedImage)})`
-                    : "none",
+                  backgroundImage: imageData ? `url(${imageData})` : "none",
                   backgroundSize: "cover",
                   backgroundPosition: "center",
                 }}
@@ -56,7 +87,7 @@ const AddBlog = () => {
                   hidden
                   onChange={handleImageChange}
                 />
-                {!selectedImage ? (
+                {!imageUploaded ? (
                   <div className="img-view">
                     <img src={folderAddImage} alt="" />
                     <p>
@@ -67,7 +98,6 @@ const AddBlog = () => {
               </label>
             </div>
           </div>
-          
         </form>
       </section>
     </>
