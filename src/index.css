@@ -26,7 +26,6 @@
     --aqua-clr: #08D2AE;
     --pale-aqua-clr: #08d2ad14;
     --blue-clr: #5D37F3;
-    --bg-clr: #F3F2FA;
     --dark-clr: #1A1A1F;
     --gray-clr: #85858D;
     --dark-gray-clr: #404049;
@@ -53,7 +52,6 @@ body
 {
     width: 100vw;
     height: 100vh;
-    background-color: var(--bg-clr);
     overflow-x: hidden;
 }
 a, button
