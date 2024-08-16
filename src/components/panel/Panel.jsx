@@ -64,7 +64,7 @@ const Panel = ({
                     placeholder="Example@redberry.ge"
                     value={email}
                     onChange={handleEmailChange}
-                    className={error ? "error-input" : ""}
+                    className={error ? "error-input" : "input"}
                   />
                   {error && (
                     <div className="error-message" style={{ color: "red" }}>
