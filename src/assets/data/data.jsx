@@ -12,7 +12,7 @@ export const blogs = [
     description: `6 თვის შემდეგ ყველის ბრმა დეგუსტაციის დროც დადგა. მაქსიმალური სიზუსტისთვის, ეს პროცესი ორჯერ გაიმეორეს და ორივეჯერ იმ ყველს მიენიჭა უპირატესობა, რომელსაც ჰიპ-ჰოპს ასმენინებდნენ. „მუსიკალური ენერგია პირდაპირ ყველის შუაგულში რეზონირებდა“, — აღნიშნა ბერნის ხელოვნების უნივერსიტეტის წარმომადგენელმა, მაიკლ ჰერენბერგმა.
 რა თქმა უნდა, ეს ერთი კვლევა საკმარისი არ არის საბოლოო დასკვნების გამოსატანად. სანაცვლოდ, მეცნიერებს სურთ, უშუალოდ ჰიპ-ჰოპის ჟანრის სხვადასხვა მუსიკა მოასმენინონ რამდენიმე ყველს და უკვე ისინი შეაჯიბრონ ერთმანეთს.
 აქვე საგულისხმოა, რომ როგორც ბერნის მეცნიერები განმარტავენ, ექსპერიმენტს საფუძვლად არა ყველის გაუმჯობესებული წარმოება, არამედ კულტურული საკითხები დაედო. მათი თქმით, ადამიანებს უყვართ ყველი და მუსიკა, ამიტომაც საინტერესოა ამ ორის კავშირის დანახვა.`,
-    category: ["Market", "Aplication", "UI/UX"],
+    category: ["Market", "Application", "UI/UX"],
   },
   {
     id: 2,
@@ -32,7 +32,7 @@ export const blogs = [
     date: "01 02 2023",
     authorEmail: "email@gmail.com",
     description: "lorem lalalalalalalalal",
-    category: ["Aplication", "Figma"],
+    category: ["Application", "Figma"],
   },
   {
     id: 4,
@@ -42,7 +42,7 @@ export const blogs = [
     date: "01 02 2023",
     authorEmail: "email@gmail.com",
     description: "lorem lalalalalalalalal",
-    category: ["Aplication", "AI"],
+    category: ["Application", "AI"],
   },
   {
     id: 5,
@@ -52,7 +52,7 @@ export const blogs = [
     date: "01 02 2023",
     authorEmail: "email@gmail.com",
     description: "lorem lalalalalalalalal",
-    category: ["Market", "Aplication", "Explore"],
+    category: ["Market", "Application", "Explore"],
   },
   {
     id: 6,
