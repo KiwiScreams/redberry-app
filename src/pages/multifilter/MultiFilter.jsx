@@ -19,7 +19,10 @@ const MultiFilter = () => {
     { category: "Explore", label: "კვლევა" },
     { category: "Figma", label: "Figma" },
   ];
-
+  const categoryMap = filters.reduce((acc, curr) => {
+    acc[curr.category] = curr.label;
+    return acc;
+  }, {});
   const handleFilterButtonClick = (selectedCategory) => {
     if (selectedFilters.includes(selectedCategory)) {
       let filters = selectedFilters.filter((el) => el !== selectedCategory);
@@ -86,10 +89,10 @@ const MultiFilter = () => {
                             key={`category-${idx}`}
                             className={getCategoryClassName(category)}
                           >
-                            {category}
+                            {categoryMap[category]}
                           </span>
                         ))
-                      : item.categories}
+                      : categoryMap[item.categories]}
                   </p>
                   <p className="desc-content">
                     {item.description} <span className="read-more">...</span>
