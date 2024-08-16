@@ -139,24 +139,24 @@ const AddBlog = () => {
             </div>
             <div className="flex-input-container">
               <div className="input-container">
-                <label htmlFor="title">გამოქვეყნების თარიღი*</label>
+                <label htmlFor="date">გამოქვეყნების თარიღი*</label>
                 <input
                   type="text"
                   name="title"
-                  id="title"
+                  id="date"
                   placeholder="შეიყვანეთ აღწერა"
                 />
               </div>
 
               <div className="input-container">
                 <label htmlFor="category">კატეგორია</label>
-                <div class="custom-select">
+                <div className="custom-select">
                   <select>
                     <option value="">შეიყვანეთ სათაური</option>
                     <option value="option1">Option 1</option>
                     <option value="option2">Option 2</option>
                   </select>
-                  <span class="select-arrow"></span>
+                  <span className="select-arrow"></span>
                 </div>
               </div>
             </div>

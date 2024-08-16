@@ -22,7 +22,7 @@ export const blogs = [
     date: "01 02 2023",
     authorEmail: "email@gmail.com",
     description: "lorem lalalalalalalalal",
-    category: ["Market"],
+    category: ["Market", "UI/UX"],
   },
   {
     id: 3,
@@ -42,7 +42,7 @@ export const blogs = [
     date: "01 02 2023",
     authorEmail: "email@gmail.com",
     description: "lorem lalalalalalalalal",
-    category: ["Aplication"],
+    category: ["Aplication", "AI"],
   },
   {
     id: 5,
@@ -62,6 +62,6 @@ export const blogs = [
     date: "01 02 2023",
     authorEmail: "email@gmail.com",
     description: "lorem lalalalalalalalal",
-    category: ["Market"],
+    category: ["Market", "Explore"],
   },
 ];
