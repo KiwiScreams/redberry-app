@@ -2,6 +2,7 @@ import "./BlogDetail.css";
 import { useParams } from "react-router-dom";
 import { blogs } from "../../assets/data/data";
 import { useState, useEffect } from "react";
+import RelatedBlogs from "../related blogs/RelatedBlogs";
 
 const BlogDetail = () => {
   const { id } = useParams();
@@ -37,17 +38,7 @@ const BlogDetail = () => {
           <p>{blog.description}</p>
         </div>
       </section>
-      <section className="related-blogs">
-        <h2>Related Blogs</h2>
-        <ul>
-          {relatedBlogs.map((relatedBlog) => (
-            <li key={relatedBlog.id}>
-              {relatedBlog.title}
-              <span>Categories: {relatedBlog.category.join(", ")}</span>
-            </li>
-          ))}
-        </ul>
-      </section>
+      <RelatedBlogs relatedBlogs={relatedBlogs} />
     </>
   );
 };
