@@ -19,15 +19,7 @@ const MultiFilter = () => {
     { category: "Explore", label: "კვლევა" },
     { category: "Figma", label: "Figma" },
   ];
-  const categories = [
-    { category: "Market", label: "მარკეტი" },
-    { category: "Application", label: "აპლიკაცია" },
-    { category: "AI", label: "ხელოვნური ინტელექტი" },
-    { category: "UI/UX", label: "UI/UX" },
-    { category: "Explore", label: "კვლევა" },
-    { category: "Figma", label: "Figma" },
-  ];
-  const categoryMap = categories.reduce((acc, curr) => {
+  const categoryMap = filters.reduce((acc, curr) => {
     acc[curr.category] = curr.label;
     return acc;
   }, {});
