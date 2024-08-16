@@ -12,7 +12,18 @@ const BlogDetail = () => {
   if (!blog) {
     return <div>Blog not found</div>;
   }
-
+  const categories = [
+    { category: "Market", label: "მარკეტი" },
+    { category: "Application", label: "აპლიკაცია" },
+    { category: "AI", label: "ხელოვნური ინტელექტი" },
+    { category: "UI/UX", label: "UI/UX" },
+    { category: "Explore", label: "კვლევა" },
+    { category: "Figma", label: "Figma" },
+  ];
+  const categoryMap = categories.reduce((acc, curr) => {
+    acc[curr.category] = curr.label;
+    return acc;
+  }, {});
   const relatedBlogs = blogs
     .filter((relatedBlog) => {
       if (relatedBlog.id === blogId) return false;
@@ -33,44 +44,45 @@ const BlogDetail = () => {
           <p className="title">{blog.title}</p>
           <div className="cats-container">
             {blog.category.map((cat) => {
+              const label = categoryMap[cat];
               if (cat.toLowerCase().includes("market")) {
                 return (
                   <div key={cat} className="category-1 cat">
-                    {cat}
+                    {label}
                   </div>
                 );
               } else if (cat.toLowerCase().includes("application")) {
                 return (
                   <div key={cat} className="category-2 cat">
-                    {cat}
+                    {label}
                   </div>
                 );
               } else if (cat.toLowerCase().includes("ai")) {
                 return (
                   <div key={cat} className="category-3 cat">
-                    {cat}
+                    {label}
                   </div>
                 );
               } else if (cat.toLowerCase().includes("ui/ux")) {
                 return (
                   <div key={cat} className="category-4 cat">
-                    {cat}
+                    {label}
                   </div>
                 );
               } else if (cat.toLowerCase().includes("explore")) {
                 return (
                   <div key={cat} className="category-5 cat">
-                    {cat}
+                    {label}
                   </div>
                 );
               } else if (cat.toLowerCase().includes("figma")) {
                 return (
                   <div key={cat} className="category-6 cat">
-                    {cat}
+                    {label}
                   </div>
                 );
               } else {
-                return <div key={cat}>{cat}</div>;
+                return <div key={cat}>{label}</div>;
               }
             })}
           </div>
