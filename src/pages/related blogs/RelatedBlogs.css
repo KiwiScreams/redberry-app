@@ -1,5 +1,19 @@
 .related-blogs-section
 {
-    background-color: red;
     margin-top: 98px;
+    padding: 0 76px;
+}
+.related-blogs-container
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.related-blogs-section h2
+{
+    font-size: var(--font-size-32);
+    margin-bottom: 40px;
+    font-weight: var(--font-weight-700);
+    color: var(--dark-clr);
 }
