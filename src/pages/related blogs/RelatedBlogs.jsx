@@ -33,7 +33,10 @@ const RelatedBlogs = ({ relatedBlogs }) => {
     acc[curr.category] = curr.label;
     return acc;
   }, {});
-
+  const handleLinkClick = (event) => {
+    event.preventDefault();
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
   return (
     <>
       <section className="related-blogs-section">
@@ -65,7 +68,7 @@ const RelatedBlogs = ({ relatedBlogs }) => {
                   {relatedBlog.description}
                   <span className="read-more">...</span>
                 </p>
-                <Link to={`/blog/${relatedBlog.id}`}>
+                <Link to={`/blog/${relatedBlog.id}`} onClick={handleLinkClick}>
                   სრულად ნახვა <img src={arrowImage} alt="" />
                 </Link>
               </div>

@@ -142,7 +142,8 @@
     white-space: nowrap;
     margin-bottom: 16px;
 }
-.blogs-container a
+.blogs-container a,
+.related-blogs-container a
 {
     color: var(--blue-clr);
     font-size: var();
