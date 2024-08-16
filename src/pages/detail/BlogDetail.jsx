@@ -31,10 +31,49 @@ const BlogDetail = () => {
             {blog.date} : {blog.authorEmail}
           </span>
           <p className="title">{blog.title}</p>
-          {/* {blog.category.map((cat) => {
-            return <div key={cat}>{cat}</div>;
-          })} */}
-          <p>{blog.category}</p>
+          <div className="cats-container">
+            {blog.category.map((cat) => {
+              if (cat.toLowerCase().includes("market")) {
+                return (
+                  <div key={cat} className="category-1 cat">
+                    {cat}
+                  </div>
+                );
+              } else if (cat.toLowerCase().includes("application")) {
+                return (
+                  <div key={cat} className="category-2 cat">
+                    {cat}
+                  </div>
+                );
+              } else if (cat.toLowerCase().includes("ai")) {
+                return (
+                  <div key={cat} className="category-3 cat">
+                    {cat}
+                  </div>
+                );
+              } else if (cat.toLowerCase().includes("ui/ux")) {
+                return (
+                  <div key={cat} className="category-4 cat">
+                    {cat}
+                  </div>
+                );
+              } else if (cat.toLowerCase().includes("explore")) {
+                return (
+                  <div key={cat} className="category-5 cat">
+                    {cat}
+                  </div>
+                );
+              } else if (cat.toLowerCase().includes("figma")) {
+                return (
+                  <div key={cat} className="category-6 cat">
+                    {cat}
+                  </div>
+                );
+              } else {
+                return <div key={cat}>{cat}</div>;
+              }
+            })}
+          </div>
           <p>{blog.description}</p>
         </div>
       </section>

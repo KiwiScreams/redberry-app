@@ -13,7 +13,7 @@ const MultiFilter = () => {
 
   let filters = [
     { category: "Market", label: "მარკეტი" },
-    { category: "Aplication", label: "აპლიკაცია" },
+    { category: "Application", label: "აპლიკაცია" },
     { category: "AI", label: "ხელოვნური ინტელექტი" },
     { category: "UI/UX", label: "UI/UX" },
     { category: "Explore", label: "კვლევა" },

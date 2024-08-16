@@ -1,5 +1,6 @@
 .buttons-container button,
-.category span
+.category span,
+.cat
 {
   border-radius: var(--border-radius-30);
   padding: 8px 16px;
@@ -155,4 +156,14 @@ p.no-category
     font-size: var(--font-size-64);
     color: var(--dark-clr);
     margin: auto;
+}
+.cat
+{
+  width: fit-content;
+}
+.cats-container
+{
+  display: flex;
+  gap: 16px;
+  margin-bottom: 40px;
 }

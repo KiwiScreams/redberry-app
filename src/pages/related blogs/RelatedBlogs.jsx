@@ -1,17 +1,18 @@
 import React from "react";
+import "./RelatedBlogs.css";
 const RelatedBlogs = ({ relatedBlogs }) => {
   return (
     <>
-      <section className="related-blogs">
+      <section className="related-blogs-section">
         <h2>მსგავსი სტატიები</h2>
-        <ul>
+        <div className="related-container">
           {relatedBlogs.map((relatedBlog) => (
-            <li key={relatedBlog.id}>
+            <div key={relatedBlog.id}>
               {relatedBlog.title}
               <span>Categories: {relatedBlog.category.join(", ")}</span>
-            </li>
+            </div>
           ))}
-        </ul>
+        </div>
       </section>
     </>
   );
