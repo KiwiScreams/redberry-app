@@ -34,7 +34,6 @@ const RelatedBlogs = ({ relatedBlogs }) => {
     return acc;
   }, {});
   const handleLinkClick = (event) => {
-    event.preventDefault();
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
   return (
@@ -51,19 +50,20 @@ const RelatedBlogs = ({ relatedBlogs }) => {
                 <p className="author">{relatedBlog.author}</p>
                 <span className="date">{relatedBlog.date}</span>
                 <p className="title">{relatedBlog.title}</p>
-                <p className="category">
-                  {(Array.isArray(relatedBlog.categories)
-                    ? relatedBlog.categories
-                    : [relatedBlog.categories]
-                  ).map((category, idx) => (
-                    <span
-                      key={`category-${idx}`}
-                      className={getCategoryClassName(category)}
-                    >
-                      {categoryMap[category]}
-                    </span>
-                  ))}
-                </p>
+                {/* <p className="category">
+                  {React.Children.map(
+                    relatedBlog.categories,
+                    (category, idx) => (
+                      <span
+                        key={`category-${idx}`}
+                        className={getCategoryClassName(category)}
+                      >
+                        {categoryMap[category]}
+                      </span>
+                    )
+                  )}
+                </p> */}
+                <p>{relatedBlog.category}</p>
                 <p className="desc-content">
                   {relatedBlog.description}
                   <span className="read-more">...</span>
